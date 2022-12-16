@@ -1,5 +1,3 @@
-export USERPROFILE=/C/Users/19081126D
-
 export current_directory=$(PWD)
 
 # export ANDROID_HOME=$USERPROFILE/Downloads/PORTABLE_ANDROID_HOME
@@ -25,7 +23,7 @@ export PATH=$USERPROFILE/Downloads/cmake-3.22.2-windows-x86_64/bin:$PATH
 # cd $current_directory && \
 # ls && \
 export ANDROID_HOME=$USERPROFILE/Downloads/PORTABLE_ANDROID_HOME
-# ANDROID_NDK C:\Users\19081126D\Downloads\PORTABLE_ANDROID_HOME\ndk\25.1.8937393
+# ANDROID_NDK PORTABLE_ANDROID_HOME\ndk\25.1.8937393
 export BUILD_TOOLS=$ANDROID_HOME/build-tools/29.0.2
 
 
@@ -46,5 +44,5 @@ cmake.exe -G"MinGW Makefiles" \
 # set( "/home/amon/software/android/ndk/ndk-r14b")
 # set(JAVA_HOME $ENV{JAVA_HOME})
 
-# C:\Users\19081126D\Downloads\PORTABLE_ANDROID_HOME\ndk\25.1.8937393\toolchains\llvm\prebuilt\windows-x86_64
+# $USERPROFILE/Downloads/PORTABLE_ANDROID_HOME/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64
 
