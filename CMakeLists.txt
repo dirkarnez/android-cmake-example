@@ -27,9 +27,9 @@ cmake_minimum_required(VERSION 2.8)
 # now build app's shared lib
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11 -Wall -Werror")
 
-add_library(native_app_glue STATIC
-  "$ENV{ANDROID_NDK_HOME}/sources/android/native_app_glue/android_native_app_glue.c"
-)
+
+file(TO_CMAKE_PATH $ENV{ANDROID_NDK_HOME} ANDROID_NDK_HOME_CMAKE)
+add_library(native_app_glue STATIC ${ANDROID_NDK_HOME_CMAKE}/sources/android/native_app_glue/android_native_app_glue.c)
 
 # Export ANativeActivity_onCreate(),
 # Refer to: https://github.com/android-ndk/ndk/issues/381.
@@ -39,7 +39,7 @@ set(CMAKE_SHARED_LINKER_FLAGS
 add_library(androidcmakeexample SHARED "src/main.cpp")
 
 target_include_directories(androidcmakeexample PRIVATE
-  $ENV{ANDROID_NDK_HOME}/sources/android/native_app_glue)
+  ${ANDROID_NDK_HOME_CMAKE}/sources/android/native_app_glue)
 
 # add lib dependencies
 target_link_libraries(androidcmakeexample
@@ -53,6 +53,6 @@ add_custom_command(OUTPUT ${CMAKE_BINARY_DIR}/bin/NativeActivity.unsigned.apk
     COMMAND ${BUILD_TOOLS}/aapt package -f -M AndroidManifest.xml -S res
     -I ${ANDROID_HOME}/platforms/android-29/android.jar -F ${CMAKE_BINARY_DIR}/bin/NativeActivity.unsigned.apk bin
     COMMAND ${BUILD_TOOLS}/aapt add ${CMAKE_BINARY_DIR}/bin/NativeActivity.unsigned.apk ${CMAKE_BINARY_DIR}/libandroidcmakeexample.so
-    DEPENDS bin/classes.dex ${CMAKE_BINARY_DIR}/libandroidcmakeexample.so
+    DEPENDS ${CMAKE_BINARY_DIR}/libandroidcmakeexample.so
     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
     COMMENT "Creating bin/NativeActivity.unsigned.apk.")
