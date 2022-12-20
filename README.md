@@ -3,6 +3,10 @@ android-cmake-example
 - https://dl.google.com/android/repository/platform-tools_r33.0.3-windows.zip
 - https://dl.google.com/android/repository/commandlinetools-win-9123335_latest.zip
 
+### Notes
+1. (libnative_app_glue.a + libnative-activity.so) + (R.java -> R.class -> classes.dex) = NativeActivity.unsigned.apk
+2. NativeActivity.unsigned.apk + jarsigner  .keystore = NativeActivity.signed.apk
+
 ### Reference
 - https://on-demand.gputechconf.com/gtc/2017/presentation/S7438-robert-maynard-build-systems-combining-cuda-and-machine-learning.pdf
 - [如何在各个平台上使用CMake - 知乎](https://zhuanlan.zhihu.com/p/111915624)
