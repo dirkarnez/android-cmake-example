@@ -2,7 +2,13 @@ android-cmake-example
 =====================
 - https://dl.google.com/android/repository/platform-tools_r33.0.3-windows.zip
 - https://dl.google.com/android/repository/commandlinetools-win-9123335_latest.zip
-
+- JDK Downloads
+  - [Archived OpenJDK GA Releases](https://jdk.java.net/archive/)
+    - [openjdk-11.0.2_windows-x64_bin.zip](https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_windows-x64_bin.zip)
+  - [Installation | AdoptOpenJDK - Open source, prebuilt OpenJDK binaries](https://adoptopenjdk.net/installation.html#x64_win-jre)
+    - [OpenJDK11U-jdk_x64_windows_hotspot_11.0.13_8.zip](https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.13%2B8/OpenJDK11U-jdk_x64_windows_hotspot_11.0.13_8.zip)
+    - [OpenJDK8U-jdk_x64_windows_hotspot_8u322b06.zip](https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jdk_x64_windows_hotspot_8u322b06.zip)
+    
 ### Notes
 1. (libnative_app_glue.a + libnative-activity.so) + (R.java -> R.class -> classes.dex) = NativeActivity.unsigned.apk
 2. NativeActivity.unsigned.apk + jarsigner  .keystore = NativeActivity.signed.apk
