@@ -1,13 +1,15 @@
 #include <android_native_app_glue.h>
 #include <android/log.h>
+#include <EGL/egl.h>
+#include <GLES/gl.h>
 
-#define APPNAME "CMakeExampleApp"
+// #define APPNAME "CMakeExampleApp"
 
 void android_main(struct android_app* state)
 {
     //app_dummy(); // Make sure glue isn't stripped
 
-    __android_log_print(ANDROID_LOG_INFO, APPNAME, "HolyShit you did it !");
+    //__android_log_print(ANDROID_LOG_INFO, APPNAME, "HolyShit you did it !");
 
     ANativeActivity_finish(state->activity);
 }
